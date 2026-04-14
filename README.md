@@ -1,8 +1,14 @@
-# DNS TXT Record Verification Tool
+# Scripts
+
+Collection of tools and scripts for various tasks
+
+## Tools
+
+### DNS TXT Record Verification Tool
 
 A cross-platform command-line application to verify DNS TXT records. Works on macOS, Windows, and Linux.
 
-## Features
+#### Features
 
 - ✅ Verify TXT record existence
 - ✅ Compare actual vs expected values
@@ -11,13 +17,9 @@ A cross-platform command-line application to verify DNS TXT records. Works on ma
 - ✅ Detailed error messages
 - ✅ Cross-platform (macOS, Windows, Linux)
 
-## Installation
+#### Installation
 
-### Prerequisites
-
-- Python 3.6 or higher
-
-### Setup
+**Prerequisites:** Python 3.6 or higher
 
 1. Install dependencies:
 ```bash
@@ -29,15 +31,14 @@ pip install -r requirements.txt
 chmod +x verify_txt_record.py
 ```
 
-## Usage
+#### Usage
 
-### Basic Usage
-
+**Basic Usage:**
 ```bash
 python verify_txt_record.py <record_name> <expected_value>
 ```
 
-### Examples
+**Examples:**
 
 Verify an SPF record:
 ```bash
@@ -54,27 +55,19 @@ Verify a domain verification record:
 python verify_txt_record.py verification.example.com "google-site-verification=ABC123"
 ```
 
-### Options
-
+**Options:**
 - `-v, --verbose`: Show all TXT records found, even if verification succeeds
 - `--version`: Show version information
 - `-h, --help`: Show help message
 
-### Verbose Mode
-
-```bash
-python verify_txt_record.py example.com "expected value" --verbose
-```
-
-## Exit Codes
+#### Exit Codes
 
 - `0`: Verification successful (TXT record exists and matches expected value)
 - `1`: Verification failed (record not found, value mismatch, or DNS error)
 
-## Output Examples
+#### Output Examples
 
-### Success
-
+**Success:**
 ```
 Verifying TXT record for: example.com
 ------------------------------------------------------------
@@ -84,8 +77,7 @@ Verifying TXT record for: example.com
 ------------------------------------------------------------
 ```
 
-### Value Mismatch
-
+**Value Mismatch:**
 ```
 Verifying TXT record for: example.com
 ------------------------------------------------------------
@@ -97,53 +89,12 @@ Verifying TXT record for: example.com
 ------------------------------------------------------------
 ```
 
-### Domain Not Found
-
+**Domain Not Found:**
 ```
 Verifying TXT record for: nonexistent.example.com
 ------------------------------------------------------------
 ✗ Verification failed: Domain 'nonexistent.example.com' does not exist
 ------------------------------------------------------------
-```
-
-## Testing
-
-Test with a known TXT record:
-
-```bash
-# Google's public DNS TXT record
-python verify_txt_record.py google.com "v=spf1 include:_spf.google.com ~all"
-```
-
-## Platform-Specific Notes
-
-### macOS
-- Works natively with system Python or installed Python 3
-- Uses system DNS resolver by default
-
-### Windows
-- Works with Python 3 from python.org or Microsoft Store
-- Uses system DNS resolver by default
-
-### Linux
-- Works with system Python 3 or virtual environments
-- Uses system DNS resolver by default
-
-## Troubleshooting
-
-**DNS timeout errors**: The tool waits up to 10 seconds for DNS responses. If you experience timeouts:
-- Check your internet connection
-- Verify DNS servers are accessible
-- Try using a public DNS server (configure in OS settings)
-
-**Import errors**: Make sure `dnspython` is installed:
-```bash
-pip install dnspython
-```
-
-**Permission errors on Unix systems**: Make the script executable:
-```bash
-chmod +x verify_txt_record.py
 ```
 
 ## License
