@@ -1,0 +1,149 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                    🚀 GET STARTED IN 3 STEPS                      ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+STEP 1: RUN THE INSTALLER
+─────────────────────────────────────────────────────────────────────
+./setup.sh
+
+What happens:
+✓ Detects your OS and shell automatically
+✓ Installs Homebrew (if needed)
+✓ Installs Starship prompt
+✓ Installs FiraCode Nerd Font
+✓ Installs modern CLI tools (eza, bat, zoxide, fzf, etc.)
+✓ Configures your shell with aliases
+✓ Creates automatic backup of your config
+
+Time: ~5-10 minutes (depending on your connection)
+
+
+STEP 2: APPLY THE CHANGES
+─────────────────────────────────────────────────────────────────────
+source ~/.zshrc          # if using Zsh (macOS default)
+source ~/.bashrc         # if using Bash (Linux default)
+
+OR simply restart your terminal
+
+
+STEP 3: CONFIGURE YOUR TERMINAL FONT
+─────────────────────────────────────────────────────────────────────
+Set your terminal to use: FiraCode Nerd Font
+
+macOS Terminal:
+  Terminal → Settings → Profiles → Text → Font → FiraCode Nerd Font
+
+iTerm2:
+  Settings → Profiles → Default → Text → Font → FiraCode Nerd Font
+
+VS Code:
+  Settings → Search "Terminal Font" → FiraCode Nerd Font
+
+Windows Terminal:
+  Settings → Profiles → Defaults → Appearance → Font → FiraCode Nerd Font
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                        ✅ VERIFY IT WORKS                         ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+Run the verification script:
+./verify.sh
+
+Or test manually:
+ls              # Should show colorful icons
+bat README.md   # Should show syntax highlighting
+z ~             # After using 'cd' a few times
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                      📚 WHAT TO READ NEXT                         ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+1. README.md           - Complete documentation
+2. QUICK_REFERENCE.md  - Command cheat sheet (bookmark this!)
+3. PLATFORM_GUIDES.md  - OS-specific tips
+4. CHECKLIST.md        - Detailed installation checklist
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                     🎯 TRY THESE COMMANDS                         ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+ls                     # List files with icons
+la                     # List all files (including hidden)
+ll                     # Long format with details
+bat README.md          # View file with syntax highlighting
+fd setup               # Find files containing "setup"
+tldr tar               # Quick help for tar command
+yazi                   # Open file manager
+lazygit                # Git UI (in a git repo)
+z Documents            # Jump to Documents (after visiting once)
+
+KEYBOARD SHORTCUTS:
+Ctrl+R                 # Search command history (fuzzy)
+Ctrl+T                 # Find files (fuzzy)
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                       💡 PRO TIPS                                 ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+1. Use 'z' instead of 'cd' - It learns your patterns!
+   cd ~/Documents/Projects/my-app
+   # Later, anywhere:
+   z app      # Jumps straight there!
+
+2. Combine tools with fuzzy finding:
+   bat $(fd -e md | fzf)      # Find and view markdown files
+   vim $(fzf)                  # Find and edit any file
+
+3. Type a wrong command? Just type 'fuck' and it suggests the fix!
+   apt install vim
+   # Command 'apt' not found
+   fuck
+   # Suggests: sudo apt install vim
+
+4. Use 'tldr' before 'man' - Simpler examples!
+   tldr tar      # Shows practical examples
+   man tar       # Full technical documentation
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                    🆘 TROUBLESHOOTING                             ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+Problem: "command not found" errors
+Fix:     source ~/.zshrc  (or ~/.bashrc)
+
+Problem: Icons showing as boxes/squares
+Fix:     Set terminal font to "FiraCode Nerd Font"
+
+Problem: Starship prompt not showing
+Fix:     Check if added to config:
+         grep starship ~/.zshrc
+
+Problem: Want to revert everything
+Fix:     cp ~/.zshrc.backup.YYYYMMDD_HHMMSS ~/.zshrc
+         (Replace YYYYMMDD_HHMMSS with your backup timestamp)
+
+Still stuck? Run: ./verify.sh
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                      🌟 ENJOY YOUR TERMINAL!                      ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+You now have:
+✓ Beautiful, fast prompt that shows context
+✓ Modern commands with colors and icons
+✓ Smart directory jumping
+✓ Fuzzy finding for everything
+✓ Syntax highlighting
+✓ And much more!
+
+Explore, customize, and make it yours! 🚀
+
+─────────────────────────────────────────────────────────────────────
+Questions? Check README.md or QUICK_REFERENCE.md
+─────────────────────────────────────────────────────────────────────

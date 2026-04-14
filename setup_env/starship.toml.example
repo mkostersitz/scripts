@@ -1,0 +1,126 @@
+# Example Starship Configuration
+# This is an example of what gets downloaded from the GitHub Gist
+# Location: ~/.config/starship.toml
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Timeout for commands executed by starship (ms)
+command_timeout = 1000
+
+# Format
+format = """
+[┌─](bold green)$username$hostname$directory$git_branch$git_status
+[└─>](bold green) """
+
+# Right prompt format
+right_format = """$nodejs$python$java$gradle$aws$cmd_duration"""
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "on [$hostname](bold yellow) "
+disabled = false
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = "in [$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
+
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+style = "bold purple"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold red"
+conflicted = "🏳"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[nodejs]
+format = "via [⬢ $version](bold green) "
+disabled = false
+
+[python]
+format = 'via [🐍 $version]($style) '
+style = "bold yellow"
+disabled = false
+
+[java]
+format = "via [☕ $version](red) "
+disabled = false
+
+[gradle]
+format = "via [🅶 $version](cyan) "
+disabled = false
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = "bold yellow"
+symbol = "☁️ "
+disabled = false
+
+[aws.region_aliases]
+us-east-1 = "Virginia"
+us-east-2 = "Ohio"
+us-west-1 = "N. California"
+us-west-2 = "Oregon"
+eu-west-1 = "Ireland"
+eu-central-1 = "Frankfurt"
+ap-southeast-1 = "Singapore"
+ap-southeast-2 = "Sydney"
+
+[cmd_duration]
+min_time = 2000
+format = "took [$duration](bold yellow)"
+disabled = false
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+# Additional language/tool support
+
+[rust]
+format = "via [🦀 $version](red bold) "
+
+[golang]
+format = "via [🐹 $version](cyan bold) "
+
+[docker_context]
+format = "via [🐋 $context](blue bold) "
+
+[kubernetes]
+format = 'on [⎈ $context \($namespace\)](dimmed green) '
+disabled = false
+
+[package]
+format = "via [📦 $version](208 bold) "
+
+[terraform]
+format = "via [💠 $version](bold purple) "
+
+[ruby]
+format = "via [💎 $version](red bold) "
+
+[php]
+format = "via [🐘 $version](blue) "
