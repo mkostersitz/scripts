@@ -99,4 +99,4 @@ Verifying TXT record for: nonexistent.example.com
 
 ## License
 
-MIT License - feel free to use and modify as needed.
+Apache License 2.0
